@@ -1,0 +1,17 @@
+---
+title: "Blog de Lilou onno"
+author: "Lilou onno"
+date: "2024-03-03"
+---
+
+# Bienvenue sur mon blog !
+
+Merci de visiter mon blog. Voici mes articles :
+
+- [Exercice 1](posts/exercice_1.Rmd)
+- [Exercice 2](posts/exercice_2.Rmd)
+- [Exercice 3](posts/exercice_3.Rmd)
+- [Exercice 4](posts/exercice_4.Rmd)
+- [Exercice Final](posts/exercice_final.Rmd)
+
+
