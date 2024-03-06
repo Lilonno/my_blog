@@ -1,13 +1,69 @@
 ---
-title: "Post With Code"
-author: "Harlow Malloc"
-date: "2024-03-06"
-categories: [news, code, analysis]
-image: "image.jpg"
+title: "Exercice final"
+author: "Lilou onno"
+date: "2024-03-05"
 ---
 
-This is a post with executable code.
+- [Accueil](index.Rmd)
+- [Exercice 1](posts/exercice_1.Rmd)
+- [Exercice 2](posts/exercice_2.Rmd)
+- [Exercice 3](posts/exercice_3.Rmd)
+- [Exercice Final](posts/exercice_final.Rmd) 
+
+
+**Question 1** Ouvrez à nouveau votre projet de blog, my_blog. Ouvrez le fichier posts/post-with-code/index.qmd. Vérifiez que renv est bien actif en utilisant la fonction renv::status().Installez le package c("quarto").
 
 ```{r}
-1 + 1
+renv::status()
+renv::init()
+renv::install("quarto")
+```
+
+## Librairie olympicsWeather
+
+Le package "olympicsWeather" est un outil packages pour fournir un accès aux données météorologiques historiques des Jeux Olympiques. Il permet aux utilisateurs d'avoir une vue d'ensemble des conditions météorologiques passées lors des Jeux Olympiques pour différentes villes en fonction du nom de la ville ou de coordonnées GPS.
+
+```{r}
+#library(remotes)
+#remotes::install_github("Lilonno/olympicsWeather")
+```
+
+**Question 3 :** Installez le package olympicsWeather depuis votre dépôt github en utilisant le package remotes. Utilisez renv::snapshot() et vérifiez que le package olympicsWeather est bien mentionné dans votre fichier renv.lock à la racine de votre projet de blog.
+
+```{r}
+library(remotes)
+remotes::install_github("Lilonno/olympicsWeather1")
+renv::snapshot(packages = ("olympicsWeather"))
+```
+
+**Question 4 :** Modifiez votre post de blog posts/post-with-code/index.qmd de manière à ajouter une section pour chacune des requêtes suivantes : quelles sont les prévisions météo à 7 jours pour le stade de France ? Pour Tahiti ? Pour les coordonnées gps 43.276703,5.334791 ?
+
+```{r}
+library(olympicsWeather)
+library(devtools)
+library(httr2)
+library(jsonlite)
+library(tibble)
+library(usethis)
+library(lubridate)
+library(tidygeocoder)
+library(leaflet)
+library(sf)
+library(testthat)
+```
+
+## Prévisions météo pour les coordonnées GPS 43.276703, 5.334791
+```{r}
+get_forecast(c("43.276703, 5.334791"))
+```
+
+## Prévisions météo pour le Stade de France
+```{r}
+get_forecast("stade de France")
+```
+
+## Prévisions météo pour Tahiti
+```{r}
+get_forecast("Tahiti")
+
 ```

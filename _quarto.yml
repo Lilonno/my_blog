@@ -1,8 +1,7 @@
 project:
-  type: docs
-  output-dir: docs
+  type: website
 
-docs:
+website:
   title: "my_blog"
   navbar:
     right:
